@@ -7,6 +7,7 @@ import TasksList from "./TasksList";
 type TodoListPropsType = {
     title: string,
     tasks: Array<TaskType>
+    removeTasks: (id: number) => void
 }
 
 const TodoList = (props: TodoListPropsType) => {
@@ -17,7 +18,7 @@ const TodoList = (props: TodoListPropsType) => {
                 <input/>
                 <button>+</button>
             </div>
-            <TasksList tasks={props.tasks}/>
+            <TasksList tasks={props.tasks} removeTasks={props.removeTasks}/>
             <div>
                 <TodoListButton title={'All'}/>
                 <TodoListButton title={'Active'}/>
